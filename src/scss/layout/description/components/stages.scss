@@ -7,9 +7,7 @@
     gap: 60px;
 
     .stages__title {
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 115.02%;
+        @include font(400, 18px, 115.02%);
         text-transform: uppercase;
         color: $color-title-section;
     }
@@ -30,18 +28,13 @@
                 gap: 12px;
 
                 .stage-list__text {
-                    font-size: 18px;
-                    font-weight: 400;
-                    line-height: 130%;
+                    @include font(400, 18px, 130%);
                 }
             }
 
             .stage-container__title {
                 color: $color-title-container;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 115.02%;
+                @include font(700, 24px, 115.02%);
                 text-transform: uppercase;
             }
         }

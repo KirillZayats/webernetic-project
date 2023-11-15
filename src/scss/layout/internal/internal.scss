@@ -3,6 +3,7 @@
     width: 100%;
     @include df-column;
     gap: 40px;
+    position: relative;
 
     .container-text {
         width: $width-main;
@@ -17,10 +18,7 @@
         }
 
         .container-text__description {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 130%;
-
+            @include font(400, 24px, 130%);
             max-width: 350px;
             width: 100%;
         }
@@ -53,6 +51,8 @@
                 &::before {
                     @include down-opacity(0%, 25%);
                 }
+
+                z-index: 1;
             }
         }
 
@@ -63,7 +63,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
-
+            z-index: 3;
             &::before {
                 @include down-opacity(0%, 15%);
             }
@@ -74,8 +74,6 @@
             height: 1425px;
 
             background-image: url("../images/internal-pages/right.png");
-            // background-size: contain;
-            object-fit: cover;
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
@@ -83,5 +81,30 @@
                 @include down-opacity(0%, 20%);
             }
         }
+    }
+
+    .ellipse {
+        @include init-ellipse;
+    }
+
+    .main__ellipse-1 {
+        @include set-ellipse(436px, 436px);
+        top: 700px;
+        left: 100px;
+
+    }
+
+    .main__ellipse-2 {
+        @include set-ellipse(456px, 456px);
+        left: 600px;
+        top: 950px;
+        z-index: 1;
+    }
+
+    .main__ellipse-3 {
+        @include set-ellipse(456px, 456px);
+        left: 350px;
+        top: 1500px;
+        z-index: 2;
     }
 }

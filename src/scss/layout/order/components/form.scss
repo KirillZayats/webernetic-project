@@ -4,10 +4,7 @@
 
     .form__title {
         color: $color-form;
-        font-size: 44px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
+        @include font(900, 44px, normal);
     }
 
     .container-inputs {
@@ -26,9 +23,7 @@
             padding-bottom: 5px;
             background: transparent;
 
-            font-size: 20px;
-            font-weight: 400;
-            line-height: normal;
+            @include font(400, 20px, normal);
         }
     }
 
@@ -41,7 +36,7 @@
             color: $color-form;
             font-size: 36px;
             font-weight: 500;
-            line-height: normal;
+            @include font(500, 36px, normal);
         }
 
         .container-checkboxs {
@@ -68,10 +63,7 @@
                 }
                 .container-checkbox__label {
                     color: $color-form;
-                    font-size: 22px;
-                    font-style: normal;
-                    font-weight: 300;
-                    line-height: normal;
+                    @include font(300, 22px, normal);
                 }
             }
         }
@@ -91,20 +83,14 @@
 
         .container-caption__title {
             color: $color-form;
-
-            font-size: 36px;
-            font-weight: 900;
-            line-height: normal;
+            @include font(900, 36px, normal);
         }
 
         .container-caption__text {
             width: 220px;
             display: block;
             color: $color-white;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 132.66%;
+            @include font(500, 24px, 132.66%);
             border-bottom: 2px solid $color-white;
         }
     }

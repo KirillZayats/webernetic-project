@@ -25,6 +25,27 @@
   color: $color-title-article;
 }
 
+@mixin font($fw, $fs, $lh) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin init-ellipse {
+  position: absolute;
+  z-index: -1;
+  animation-iteration-count: infinite;
+  animation-name: animation-scale;
+  animation-duration: 1.5s;
+}
+
+@mixin set-ellipse($w, $h) {
+  width: $w;
+  height: $h;
+  border-radius: $w;
+  background: radial-gradient(50% 50% at 50% 50%, $fill-color-2 0%, rgba(204, 74, 61, 0) 100%);
+}
+
 @mixin down-opacity($start, $value) {
   content: "";
   z-index: 10;
@@ -33,4 +54,16 @@
   display: block;
   position: absolute;
   background: linear-gradient(0deg, $color-background $start, rgba(0, 0, 0, 0) $value);
+}
+
+@keyframes animation-scale {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.8;
+  }
+  100% {
+    scale: 1;
+  }
 }

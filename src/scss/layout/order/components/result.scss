@@ -10,9 +10,7 @@
         width: 100%;
         .text_title {
             color: $color-title-section;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 115.02%;
+            @include font(400, 18px, 115.02%);
             text-transform: uppercase;
         }
 
@@ -21,9 +19,7 @@
             gap: 12px;
 
             .list__item {
-                font-size: 24px;
-                font-weight: 400;
-                line-height: 138.5%;
+                @include font(400, 24px, 138.5);
                 letter-spacing: 0.15px;
             }
         }

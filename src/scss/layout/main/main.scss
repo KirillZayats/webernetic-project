@@ -2,6 +2,7 @@
     padding-top: 100px;
     width: $width-main;
     margin: 0 auto;
+    position: relative;
 
     @include df-column;
     gap: 40px;
@@ -16,9 +17,30 @@
         position: relative;
         height: 2880px;
         background-image: url("../images/main-page/down.png");
-
+        border-radius: 30px;
         &::before {
             @include down-opacity(0%, 50%);
         }
+    }
+
+    .ellipse {
+        @include init-ellipse;
+    }
+
+    .main__ellipse-1 {
+        @include set-ellipse(545px, 545px);
+        right: -135px;
+    }
+
+    .main__ellipse-2 {
+        @include set-ellipse(368px, 368px);
+        left: -70px;
+        top: 700px;
+    }
+
+    .main__ellipse-3 {
+        @include set-ellipse(578px, 578px);
+        right: -110px;
+        top: 1600px;
     }
 }

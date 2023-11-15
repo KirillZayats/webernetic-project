@@ -38,18 +38,13 @@
 
             .container-types__title {
                 color: $color-title-container;
-                font-size: 18px;
-                font-weight: 700;
-                line-height: 115.02%;
+                @include font(700, 18px, 115.02%);
             }
 
             .container-types__list {
                 @include df-column;
                 gap: 15px;
-
-                font-size: 24px;
-                font-weight: 400;
-                line-height: 115.02%;
+                @include font(400, 24px, 115.02%);
             }
         }
     }

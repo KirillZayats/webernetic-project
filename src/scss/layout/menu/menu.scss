@@ -2,7 +2,7 @@
     margin-top: 125px;
     width: $width-main;
     margin: 125px auto 0;
-
+    position: relative;
     @include df-column;
 
     .menu__title {
@@ -47,4 +47,20 @@
             left: -6px;
         }
     }
+
+    .ellipse {
+        @include init-ellipse;
+    }
+
+    .main__ellipse-1 {
+        @include set-ellipse(419px, 419px);
+        right: -50px;
+    }
+
+    .main__ellipse-2 {
+        @include set-ellipse(313px, 313px);
+        left: -30px;
+        top: 300px;
+    }
+
 }

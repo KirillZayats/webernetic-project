@@ -1,6 +1,7 @@
 .mobile {
     margin-top: 130px;
     width: 100%;
+    position: relative;
 
     .container {
         @include df-row;
@@ -19,6 +20,7 @@
             font-size: 24px;
             font-weight: 400;
             line-height: 130%;
+            @include font(400, 24px, 130%);
         }
     }
     .container__images {
@@ -93,7 +95,7 @@
                 position: relative;
 
                 .container__images__right-down-in {
-                    width: 235px;
+                    width: 234px;
                     height: 537px;
                     margin: 70px 0 5px 1px;
                     margin-left: 1px;
@@ -112,5 +114,45 @@
                 }
             }
         }
+    }
+
+    .ellipse {
+        @include init-ellipse;
+    }
+
+    .main__ellipse-1 {
+        @include set-ellipse(283px, 283px);
+        right: 0px;
+        top: 400px;
+
+    }
+
+    .main__ellipse-2 {
+        @include set-ellipse(436px, 436px);
+        left: 200px;
+        top: 500px;
+    }
+
+    .main__ellipse-3 {
+        @include set-ellipse(568px, 568px);
+        right: 200px;
+        top: 900px;
+    }
+    .main__ellipse-4 {
+        @include set-ellipse(456px, 456px);
+        left: 105px;
+        top: 1300px;
+    }
+
+    .main__ellipse-5 {
+        @include set-ellipse(436px, 436px);
+        left: 350px;
+        top: 1750px;
+    }
+
+    .main__ellipse-6 {
+        @include set-ellipse(283px, 283px);
+        right: 30px;
+        top: 1850px;
     }
 }

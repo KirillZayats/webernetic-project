@@ -6,9 +6,7 @@
 
     .creation__title {
         color: $color-title-section;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 115.02%;
+        @include font(400, 18px, 115.02%);
         text-transform: uppercase;
     }
 
@@ -18,9 +16,7 @@
         @include df-column;
         gap: 12px;
         .container-text__item {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 130%;
+            @include font(400, 24px, 130%);
         }
     }
 }
