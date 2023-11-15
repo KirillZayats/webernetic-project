@@ -1,0 +1,60 @@
+.main-info {
+    background: linear-gradient(158deg, #cc4a3d -5.27%, rgba(204, 74, 61, 0) 55.67%);
+    padding: 20px 0 125px 92px;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    grid-template-rows: 330px 410px;
+    column-gap: 68px;
+    row-gap: 60px;
+    z-index: 1;
+    position: relative;
+
+    .container__image {
+        width: 640px;
+        height: 950px;
+
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        background-image: url("../images/mackbook.png");
+        background-size: cover;
+        filter: grayscale(20%);
+    }
+
+    .container {
+        @include df-column;
+        gap: 40px;
+
+        font-size: 24px;
+        line-height: 130%;
+
+        grid-column-start: 1;
+        grid-row-start: 2;
+
+        .container-text__text {
+            font-weight: 400;
+        }
+
+        .container-text__title {
+            font-weight: 700;
+        }
+
+        .container-text {
+            @include df-column;
+            gap: 10px;
+        }
+    }
+
+    .main-info__title {
+        padding-top: 72px;
+        text-shadow:
+            0px 4px 4px rgba(0, 0, 0, 0.25),
+            0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 75px;
+        font-weight: 700;
+
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+}

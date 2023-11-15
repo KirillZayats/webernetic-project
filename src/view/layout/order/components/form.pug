@@ -1,0 +1,32 @@
+form.form 
+    h3.form__title Order a consultation
+    .container-inputs
+        input.container__input(id="IdName" type="text", placeholder="Name *")
+        input.container__input(id="IdPhoneNumber" type="tel", placeholder="Phone number *")
+        input.container__input(id="IdEmail" type="email", placeholder="E-mail *")
+        input.container__input(id="IdWebsite" type="text", placeholder="Website *")
+    .container-stack
+        h4.container-stack__title How can I help you?
+        ul.container-checkboxs 
+            li.container-checkbox
+                input.container-checkbox__input(id="website" type="checkbox")
+                label.container-checkbox__label(for="website") Website
+            li.container-checkbox
+                input.container-checkbox__input(id="seo" type="checkbox")
+                label.container-checkbox__label(for="seo") SEO
+            li.container-checkbox
+                input.container-checkbox__input(id="smm" type="checkbox")
+                label.container-checkbox__label(for="smm") SMM
+            li.container-checkbox
+                input.container-checkbox__input(id="refinement" type="checkbox")
+                label.container-checkbox__label(for="refinement") Refinement
+            li.container-checkbox
+                input.container-checkbox__input(id="context" type="checkbox")
+                label.container-checkbox__label(for="context") Context
+            li.container-checkbox
+                input.container-checkbox__input(id="other" type="checkbox")
+                label.container-checkbox__label(for="other") Other
+    a.form__send(href="#") Send
+    .container-caption
+        h5.container-caption__title It might be useful
+        a.container-caption__text БЕЛПРОМИМПЭКС

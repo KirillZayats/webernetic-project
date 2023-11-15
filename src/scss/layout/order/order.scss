@@ -1,0 +1,32 @@
+@import "./components/result.scss";
+@import "./components/form.scss";
+
+.order {
+    background: linear-gradient(-10deg, #cc4a3d 10%, rgba(204, 74, 61, 0) 80%);
+    padding-bottom: 97px;
+    .container-order {
+        width: $width-main;
+        margin: 0px auto;
+
+        @include df-column;
+        gap: 150px;
+
+        .consultation {
+            @include df-row;
+            gap: 140px;
+
+            .container {
+                width: 440px;
+                height: 539px;
+
+                position: relative;
+
+                .container__label {
+                    position: absolute;
+                    bottom: 80px;
+                    right: -60px;
+                }
+            }
+        }
+    }
+}

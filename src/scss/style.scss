@@ -1,0 +1,44 @@
+@import "./mixins";
+@import "./fonts";
+@import "./var";
+@import "./layout/layout.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-style: normal;
+  line-height: normal;
+  font-family: "CeraPro", sans-serif;
+
+  body {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    background: $color-background;
+  }
+
+  button,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "CeraPro", sans-serif;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

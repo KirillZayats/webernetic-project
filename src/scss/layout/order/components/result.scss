@@ -1,0 +1,40 @@
+.result {
+    @include df-row;
+    justify-content: space-between;
+
+    .text {
+        padding-top: 83px;
+        @include df-column;
+        gap: 40px;
+        max-width: 570px;
+        width: 100%;
+        .text_title {
+            color: $color-title-section;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 115.02%;
+            text-transform: uppercase;
+        }
+
+        .list {
+            @include df-column;
+            gap: 12px;
+
+            .list__item {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 138.5%;
+                letter-spacing: 0.15px;
+            }
+        }
+    }
+    .container-images {
+        position: relative;
+
+        .container-images__image-2 {
+            position: absolute;
+            top: 20px;
+            left: 0px;
+        }
+    }
+}

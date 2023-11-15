@@ -1,0 +1,75 @@
+.fonts {
+    padding-top: 40px;
+    width: $width-main;
+    margin: 0 auto;
+    @include df-row;
+    justify-content: space-between;
+
+    .fonts-image {
+        width: 622.109px;
+        height: 405.789px;
+    }
+
+    .container-info {
+        @include df-column;
+        gap: 40px;
+
+        .fonts__title {
+            @include title-article;
+        }
+
+        .list-fonts {
+            max-width: 460px;
+            width: 100%;
+            @include df-row;
+            column-gap: 38px;
+            row-gap: 25px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            .list-fonts__item-letter {
+                display: flex;
+                position: relative;
+                .list-fonts__item-letter__very-big {
+                    font-size: 105px;
+                    font-weight: 700;
+                }
+                .list-fonts__item-letter__big {
+                    font-size: 90px;
+                    font-weight: 600;
+                    position: relative;
+                    top: 14px;
+                }
+                .list-fonts__item-letter__higher-middle {
+                    font-size: 70px;
+                    font-weight: 600;
+                    position: relative;
+                    top: 31px;
+                }
+                .list-fonts__item-letter__middle {
+                    font-size: 45px;
+                    font-weight: 700;
+                    position: relative;
+                    top: -10px;
+                }
+                .list-fonts__item-letter__lower-middle {
+                    font-size: 35px;
+                    font-weight: 600;
+                    position: relative;
+                }
+                .list-fonts__item-letter__small {
+                    font-size: 26px;
+                    font-weight: 600;
+                    position: relative;
+                    top: 7px;
+                }
+                .list-fonts__item-letter__very-small {
+                    font-size: 20px;
+                    font-weight: 400;
+                    position: relative;
+                    top: 14px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.technologies {
+    padding-top: 22px;
+    background: $color-background;
+    width: $width-main;
+    margin: 0 auto;
+    @include df-row;
+    gap: 100px;
+    z-index: 2;
+    position: relative;
+
+    .list-icons {
+        @include df-row;
+        gap: 30px;
+
+        .list-icons__item {
+            height: 100px;
+            width: 100px;
+            border-radius: 80px;
+            background: #ececed;
+
+            @include df-row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .container-types {
+        @include df-row;
+        gap: 100px;
+
+        .container-type {
+            @include df-column;
+            gap: 20px;
+
+            &.first {
+                width: 156px;
+            }
+
+            .container-types__title {
+                color: $color-title-container;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 115.02%;
+            }
+
+            .container-types__list {
+                @include df-column;
+                gap: 15px;
+
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 115.02%;
+            }
+        }
+    }
+}

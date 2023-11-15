@@ -1,0 +1,87 @@
+.internal {
+    padding-top: 100px;
+    width: 100%;
+    @include df-column;
+    gap: 40px;
+
+    .container-text {
+        width: $width-main;
+        margin: 0 auto;
+
+        @include df-row;
+        justify-content: space-between;
+        align-items: center;
+
+        .container-text__title {
+            @include title-article;
+        }
+
+        .container-text__description {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 130%;
+
+            max-width: 350px;
+            width: 100%;
+        }
+    }
+
+    .container__images {
+        @include df-row;
+        justify-content: space-between;
+        .container__images__left {
+            @include df-column;
+            gap: 60px;
+            .container__images__left-up {
+                border-bottom-right-radius: 15px;
+                border-bottom: 3px solid #c6c6c7;
+
+                width: 400px;
+                height: 727.344px;
+                background-image: url("../images/internal-pages/left-up.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: relative;
+            }
+            .container__images__left-down {
+                width: 400px;
+                height: 780px;
+                background-image: url("../images/internal-pages/left-down.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: relative;
+                &::before {
+                    @include down-opacity(0%, 25%);
+                }
+            }
+        }
+
+        .container__images__main {
+            width: 500px;
+            height: 1760px;
+            background-image: url("../images/internal-pages/main.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+
+            &::before {
+                @include down-opacity(0%, 15%);
+            }
+        }
+
+        .container__images__right {
+            width: 400px;
+            height: 1425px;
+
+            background-image: url("../images/internal-pages/right.png");
+            // background-size: contain;
+            object-fit: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            &::before {
+                @include down-opacity(0%, 20%);
+            }
+        }
+    }
+}

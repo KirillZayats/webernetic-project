@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "index.[contenthash].js",
-    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+    assetModuleFilename: './images/[name][ext]',
   },
   module: {
     rules: [

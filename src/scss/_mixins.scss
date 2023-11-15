@@ -1,0 +1,36 @@
+@mixin font-face($name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-weight: $weight;
+    font-family: "#{$name}";
+    font-style: $style;
+    src: url("../fonts/#{$path}.ttf") format("ttf");
+    font-display: swap;
+  }
+}
+
+@mixin df-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin df-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin title-article {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 115.02%;
+  color: $color-title-article;
+}
+
+@mixin down-opacity($start, $value) {
+  content: "";
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background: linear-gradient(0deg, $color-background $start, rgba(0, 0, 0, 0) $value);
+}

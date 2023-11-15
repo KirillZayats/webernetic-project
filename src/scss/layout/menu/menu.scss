@@ -1,0 +1,50 @@
+.menu {
+    margin-top: 125px;
+    width: $width-main;
+    margin: 125px auto 0;
+
+    @include df-column;
+
+    .menu__title {
+        @include title-article;
+    }
+
+    .container {
+        border-radius: 30px;
+        border: 6px solid $fill-color-3;
+        max-width: 1028px;
+        width: 100%;
+        height: 520px;
+        margin: 40px auto 130px;
+
+        background-image: url("../images/menu/before.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+
+        .container__after {
+            border-left: 6px solid $fill-color-3;
+            border-right: 6px solid $fill-color-3;
+            margin-top: 383px;
+            width: 100%;
+            height: 70px;
+            background-image: url("../images/menu/after.png");
+            background-size: cover;
+            position: absolute;
+            left: -6px;
+        }
+
+        .container__footer {
+            background: $fill-color-2;
+            border-left: 6px solid $fill-color-3;
+            border-right: 6px solid $fill-color-3;
+            border-bottom: 6px solid $fill-color-3;
+            border-radius: 0 0 30px 30px;
+            width: 100%;
+            height: 70px;
+            margin-top: 453px;
+            position: absolute;
+            left: -6px;
+        }
+    }
+}

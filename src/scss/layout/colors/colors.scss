@@ -1,0 +1,48 @@
+.colors {
+    padding-top: 100px;
+    width: $width-main;
+    margin: 0 auto;
+    @include df-row;
+    justify-content: space-between;
+
+    .container-info {
+        @include df-column;
+        gap: 40px;
+        .colors__title {
+            @include title-article;
+        }
+        .list-colors {
+            max-width: 490px;
+            width: 100%;
+            @include df-row;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+
+            .list-colors__item {
+                width: 130px;
+                height: 80px;
+                position: relative;
+                span {
+                    position: absolute;
+                    top: 30px;
+                    left: 20px;
+
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 140%;
+                    letter-spacing: 0.15px;
+                }
+            }
+
+            .list-colors__item__black {
+                color: $color-white;
+            }
+        }
+    }
+    .colors-image {
+        width: 598.772px;
+        height: 433.05px;
+        transform: rotate(-1.582deg);
+    }
+}

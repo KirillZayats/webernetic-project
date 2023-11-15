@@ -1,0 +1,111 @@
+.form {
+    max-width: 571px;
+    width: 100%;
+
+    .form__title {
+        color: $color-form;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+
+    .container-inputs {
+        margin-top: 22px;
+        @include df-row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 40px;
+        .container__input {
+            max-width: 260px;
+            width: 100%;
+            border-bottom: 1px solid $color-form;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            padding-bottom: 5px;
+            background: transparent;
+
+            font-size: 20px;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    .container-stack {
+        margin: 50px 0;
+        @include df-column;
+        gap: 20px;
+
+        .container-stack__title {
+            color: $color-form;
+            font-size: 36px;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .container-checkboxs {
+            @include df-row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            column-gap: 75px;
+            row-gap: 22px;
+            .container-checkbox {
+                @include df-row;
+                gap: 8px;
+                align-items: center;
+
+                .container-checkbox__input {
+                    width: 14px;
+                    height: 14px;
+                    background: $color-white;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    border: none;
+                    outline: none;
+                    border-radius: 3px;
+                }
+                .container-checkbox__label {
+                    color: $color-form;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+
+    .form__send {
+        color: $color-white;
+        font-size: 36px;
+        font-weight: 900;
+        border-bottom: 4px solid $color-white;
+    }
+
+    .container-caption {
+        margin-top: 100px;
+        @include df-column;
+        gap: 20px;
+
+        .container-caption__title {
+            color: $color-form;
+
+            font-size: 36px;
+            font-weight: 900;
+            line-height: normal;
+        }
+
+        .container-caption__text {
+            width: 220px;
+            display: block;
+            color: $color-white;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 132.66%;
+            border-bottom: 2px solid $color-white;
+        }
+    }
+}
