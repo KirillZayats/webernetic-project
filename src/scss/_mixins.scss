@@ -64,6 +64,25 @@
   animation-duration: 1.5s;
 }
 
+@mixin open {
+  animation-iteration-count: 1;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+@mixin close {
+  animation-iteration-count: 1;
+  animation-name: fade-out;
+  animation-duration: 1s;
+}
+
+@mixin up {
+  animation-iteration-count: 1;
+  animation-name: up-position;
+  animation-duration: 1s;
+}
+
+
 @mixin set-ellipse($w, $h) {
   width: $w;
   height: $h;
@@ -90,6 +109,44 @@
   }
   100% {
     scale: 1;
+  }
+}
+
+@keyframes up-position  {
+  0% {
+    top: -50px;
+    left: 10px;
+  }
+  100% {
+    top: -20px;
+    left: 0px;
+  }
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    scale: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    scale: 0;
+    transform: translateY(20px);
   }
 }
 

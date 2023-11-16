@@ -62,8 +62,11 @@
         }
 
         .list-colors__item {
-            position: relative;
+            opacity: 0;
+            scale: 0;
 
+            transition: all 1 ease-out;
+            position: relative;
             @media screen and (min-width: $mobileS) {
                 width: 80px;
                 height: 50px;
@@ -103,6 +106,13 @@
                     left: 20px;
                 }
             }
+        }
+
+        .animate {
+            transition: all 1 ease-out;
+            @include open;
+            opacity: 1;
+            scale: 1;
         }
 
         .list-colors__item__black {

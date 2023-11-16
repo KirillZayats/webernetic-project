@@ -80,7 +80,14 @@
 
         .container-images__image-2 {
             position: absolute;
-            top: 20px;
+            top: -50px;
+            left: 10px;
+        }
+
+        .animate {
+            transition: all 1 ease-out;
+            @include up;
+            top: -20px;
             left: 0px;
         }
     }
