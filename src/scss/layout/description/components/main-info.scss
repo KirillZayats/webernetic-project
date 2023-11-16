@@ -1,36 +1,99 @@
 .main-info {
     background: linear-gradient(158deg, #cc4a3d -5.27%, rgba(204, 74, 61, 0) 55.67%);
-    padding: 20px 0 125px 92px;
-    display: grid;
-    grid-template-columns: 600px 1fr;
-    grid-template-rows: 330px 410px;
-    column-gap: 68px;
-    row-gap: 60px;
     z-index: 1;
     position: relative;
+    overflow: hidden;
+    @media screen and (min-width: $mobileS) {
+        @include df-column;
+        gap: 25px;
+        padding-bottom: 30px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        grid-template-rows: 187px 345px;
+        padding: 20px 0 60px 60px;
+        column-gap: 10px;
+        row-gap: 25px;
+    }
+
+    @media screen and (min-width: $laptop) {
+        padding: 20px 0 125px 92px;
+        grid-template-columns: 470px 1fr;
+        grid-template-rows: 255px 300px;
+        padding: 20px 0 90px 60px;
+        gap: 30px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        grid-template-columns: 600px 1fr;
+        grid-template-rows: 330px 410px;
+        column-gap: 68px;
+        row-gap: 60px;
+        padding: 20px 0 125px 92px;
+    }
 
     .container__image {
-        width: 640px;
-        height: 950px;
-
-        grid-column-start: 2;
-        grid-row-start: 1;
-        grid-row-end: 3;
-
         background-image: url("../images/mackbook.png");
         background-size: cover;
         filter: grayscale(20%);
+
+        @media screen and (min-width: $mobileS) {
+            width: 100%;
+            height: 420px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            height: 495px;
+        }
+        @media screen and (min-width: $mobileL) {
+            height: 560px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            width: 410px;
+            height: 555px;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        @media screen and (min-width: $laptop) {
+            width: 468px;
+            height: 605px;
+        }
+        @media screen and (min-width: $desktop) {
+            width: 660px;
+            height: 950px;
+        }
     }
 
     .container {
         @include df-column;
-        gap: 40px;
 
-        font-size: 24px;
-        line-height: 130%;
+        @media screen and (min-width: $mobileS) {
+            padding: 0 15px;
+            @include font(400, 18px, 140%);
+            gap: 20px;
+        }
 
-        grid-column-start: 1;
-        grid-row-start: 2;
+        @media screen and (min-width: $mobileM) {
+            padding: 0 20px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            padding: 0;
+            gap: 25px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            gap: 40px;
+            font-size: 24px;
+            line-height: 130%;
+        }
 
         .container-text__text {
             font-weight: 400;
@@ -47,14 +110,40 @@
     }
 
     .main-info__title {
-        padding-top: 72px;
         text-shadow:
             0px 4px 4px rgba(0, 0, 0, 0.25),
             0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-size: 75px;
         font-weight: 700;
+        line-height: 115.02%;
 
-        grid-column-start: 1;
-        grid-row-start: 1;
+        @media screen and (min-width: $mobileS) {
+            font-size: 35px;
+            padding: 30px 15px 0;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            font-size: 42px;
+            padding: 32px 20px 0;
+        }
+        @media screen and (min-width: $mobileL) {
+            font-size: 46px;
+            padding: 40px 20px 0;
+        }
+
+        @media screen and (min-width: $tablet) {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            padding: 22px 0 0;
+        }
+
+        @media screen and (min-width: $laptop) {
+            font-size: 58px;
+            padding: 52px 0 0;
+        }
+
+        @media screen and (min-width: $desktop) {
+            font-size: 75px;
+            padding: 72px 0 0;
+        }
     }
 }

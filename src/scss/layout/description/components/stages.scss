@@ -1,40 +1,114 @@
 .stages {
-    width: $width-main;
-    margin: 0 auto;
-    padding: 140px 0 130px;
-
+    @include adaptive-main-container;
     @include df-column;
-    gap: 60px;
+
+    @media screen and (min-width: $mobileS) {
+        gap: 35px;
+        padding: 60px 0;
+    }
+
+    @media screen and (min-width: $tablet) {
+        gap: 60px;
+        padding: 100px 0;
+    }
+
+    @media screen and (min-width: $laptop) {
+        padding: 140px 0 130px;
+    }
 
     .stages__title {
-        @include font(400, 18px, 115.02%);
+        @media screen and (min-width: $mobileS) {
+            @include font(400, 14px, 115.02%);
+        }
+        @media screen and (min-width: $tablet) {
+            @include font(400, 18px, 115.02%);
+        }
         text-transform: uppercase;
         color: $color-title-section;
     }
 
     .stage-containers {
-        @include df-row;
-        gap: 40px;
+        @media screen and (min-width: $mobileS) {
+            @include df-column;
+            gap: 30px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include df-row;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            flex-wrap: nowrap;
+        }
 
         .stage-containers__item {
-            border-left: 1px solid $color-title-section;
-            @include df-column;
-            justify-content: space-between;
-            padding: 0 15px;
-            height: 317px;
+            @media screen and (min-width: $mobileS) {
+                @include df-rev-column;
+                gap: 20px;
+                border-top: 1px solid $color-title-section;
+                padding: 10px 0;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                @include df-rev-row;
+                justify-content: space-between;
+            }
+
+            @media screen and (min-width: $tablet) {
+                @include df-column;
+                border-top: none;
+                border-left: 1px solid $color-title-section;
+                padding: 0 15px;
+            }
+
+            @media screen and (min-width: $laptop) {
+                height: 250px;
+            }
+
+            @media screen and (min-width: $desktop) {
+                height: 317px;
+            }
 
             .stage-list {
                 @include df-column;
                 gap: 12px;
 
+                @media screen and (min-width: $mobileM) {
+                    max-width: 190px;
+                    width: 100%;
+                }
+                @media screen and (min-width: $tablet) {
+                    max-width: 250px;
+                }
+
+                @media screen and (min-width: $laptop) {
+                    max-width: 260px;
+                }
+
+                @media screen and (min-width: $laptop) {
+                    max-width: max-content;
+                }
+
                 .stage-list__text {
-                    @include font(400, 18px, 130%);
+                    @media screen and (min-width: $mobileS) {
+                        @include font(400, 14px, 130%);
+                    }
+                    @media screen and (min-width: $tablet) {
+                        @include font(400, 18px, 130%);
+                    }
                 }
             }
 
             .stage-container__title {
                 color: $color-title-container;
-                @include font(700, 24px, 115.02%);
+                @media screen and (min-width: $mobileS) {
+                    @include font(700, 18px, 115.02%);
+                }
+                @media screen and (min-width: $tablet) {
+                    @include font(700, 24px, 115.02%);
+                }
                 text-transform: uppercase;
             }
         }

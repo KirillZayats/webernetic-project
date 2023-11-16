@@ -1,37 +1,95 @@
 .technologies {
     padding-top: 22px;
     background: $color-background;
-    width: $width-main;
-    margin: 0 auto;
-    @include df-row;
-    gap: 100px;
+    @include adaptive-main-container;
     z-index: 2;
     position: relative;
 
+    @media screen and (min-width: $mobileS) {
+        @include df-column;
+        gap: 50px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        @include df-row;
+        gap: 100px;
+    }
+
     .list-icons {
         @include df-row;
-        gap: 30px;
+
+        @media screen and (min-width: $mobileS) {
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        @media screen and (min-width: $tablet) {
+            justify-content: flex-start;
+            gap: 90px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            gap: 30px;
+        }
 
         .list-icons__item {
-            height: 100px;
-            width: 100px;
-            border-radius: 80px;
             background: #ececed;
 
             @include df-row;
             align-items: center;
             justify-content: center;
+
+            @media screen and (min-width: $mobileS) {
+                height: 80px;
+                width: 80px;
+                border-radius: 60px;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                height: 90px;
+                width: 90px;
+                border-radius: 80px;
+            }
+
+            @media screen and (min-width: $mobileL) {
+                height: 100px;
+                width: 100px;
+                border-radius: 80px;
+            }
         }
     }
 
     .container-types {
         @include df-row;
-        gap: 100px;
+
+        @media screen and (min-width: $mobileS) {
+            row-gap: 40px;
+            column-gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (min-width: $tablet) {
+            gap: 50px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            gap: 100px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            flex-wrap: nowrap;
+        }
 
         .container-type {
             @include df-column;
-            gap: 20px;
 
+            @media screen and (min-width: $mobileS) {
+                gap: 10px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                gap: 20px;
+            }
             &.first {
                 width: 156px;
             }
@@ -44,7 +102,14 @@
             .container-types__list {
                 @include df-column;
                 gap: 15px;
-                @include font(400, 24px, 115.02%);
+
+                @media screen and (min-width: $mobileS) {
+                    @include font(400, 20px, 115.02%);
+                }
+
+                @media screen and (min-width: $tablet) {
+                    @include font(400, 24px, 115.02%);
+                }
             }
         }
     }

@@ -1,17 +1,43 @@
 .result {
-    @include df-row;
-    justify-content: space-between;
+    @media screen and (min-width: $mobileS) {
+        @include df-column;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        @include df-row;
+        justify-content: space-between;
+        gap: 0;
+    }
 
     .text {
-        padding-top: 83px;
         @include df-column;
         gap: 40px;
-        max-width: 570px;
         width: 100%;
+
+        @media screen and (min-width: $laptop) {
+            max-width: 500px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            max-width: 570px;
+        }
         .text_title {
             color: $color-title-section;
-            @include font(400, 18px, 115.02%);
             text-transform: uppercase;
+
+            @media screen and (min-width: $mobileS) {
+                @include font(400, 14px, 115.02%);
+            }
+
+            @media screen and (min-width: $tablet) {
+                @include font(400, 18px, 115.02%);
+            }
+
+            @media screen and (min-width: $desktop) {
+                padding-top: 83px;
+            }
         }
 
         .list {
@@ -19,13 +45,38 @@
             gap: 12px;
 
             .list__item {
-                @include font(400, 24px, 138.5);
                 letter-spacing: 0.15px;
+
+                @media screen and (min-width: $mobileS) {
+                    @include font(400, 18px, 140%);
+                }
+
+                @media screen and (min-width: $laptop) {
+                    @include font(400, 24px, 138.5%);
+                }
             }
         }
     }
     .container-images {
         position: relative;
+        margin: 0 auto;
+        @media screen and (min-width: $mobileS) {
+            left: -10px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            left: 0px;
+        }
+        img {
+            @media screen and (min-width: $mobileS) {
+                width: 100%;
+                transform: rotate(20deg);
+            }
+
+            @media screen and (min-width: $tablet) {
+                transform: rotate(0deg);
+            }
+        }
 
         .container-images__image-2 {
             position: absolute;

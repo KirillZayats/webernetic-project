@@ -13,16 +13,41 @@
   flex-direction: row;
 }
 
+@mixin df-rev-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 @mixin df-column {
   display: flex;
   flex-direction: column;
 }
 
+@mixin df-rev-column {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 @mixin title-article {
-  font-size: 100px;
   font-weight: 700;
-  line-height: 115.02%;
   color: $color-title-article;
+
+  @media screen and (min-width: $mobileS) {
+    font-size: 40px;
+    line-height: 100%;
+  }
+
+  @media screen and (min-width: $tablet) {
+    line-height: 115.02%;
+    font-size: 70px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 90px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 100px;
+  }
 }
 
 @mixin font($fw, $fs, $lh) {
@@ -65,5 +90,32 @@
   }
   100% {
     scale: 1;
+  }
+}
+
+@mixin adaptive-main-container {
+  margin: 0 auto;
+  @media screen and (min-width: $mobileS) {
+    max-width: calc($mobileS - 30px);
+  }
+
+  @media screen and (min-width: $mobileM) {
+    max-width: calc($mobileM - 40px);
+  }
+
+  @media screen and (min-width: $mobileL) {
+    max-width: calc($mobileL - 40px);
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: calc($tablet - 80px);
+  }
+
+  @media screen and (min-width: $laptop) {
+    max-width: calc($laptop - 100px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: calc($desktop - 200px);
   }
 }

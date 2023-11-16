@@ -4,7 +4,14 @@
 
     .form__title {
         color: $color-form;
-        @include font(900, 44px, normal);
+
+        @media screen and (min-width: $mobileS) {
+            @include font(900, 25px, normal);
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include font(900, 44px, normal);
+        }
     }
 
     .container-inputs {
@@ -12,9 +19,15 @@
         @include df-row;
         flex-wrap: wrap;
         justify-content: space-between;
-        row-gap: 40px;
+
+        @media screen and (min-width: $mobileS) {
+            row-gap: 30px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            row-gap: 40px;
+        }
         .container__input {
-            max-width: 260px;
             width: 100%;
             border-bottom: 1px solid $color-form;
             border-left: none;
@@ -24,31 +37,67 @@
             background: transparent;
 
             @include font(400, 20px, normal);
+
+            @media screen and (min-width: $tablet) {
+                max-width: 260px;
+            }
         }
     }
 
     .container-stack {
-        margin: 50px 0;
         @include df-column;
         gap: 20px;
+
+        @media screen and (min-width: $mobileS) {
+            margin: 30px 0;
+        }
+
+        @media screen and (min-width: $tablet) {
+            margin: 50px 0;
+        }
 
         .container-stack__title {
             color: $color-form;
             font-size: 36px;
             font-weight: 500;
-            @include font(500, 36px, normal);
+
+            @media screen and (min-width: $mobileS) {
+                @include font(500, 20px, normal);
+            }
+
+            @media screen and (min-width: $tablet) {
+                @include font(500, 36px, normal);
+            }
         }
 
         .container-checkboxs {
             @include df-row;
             flex-wrap: wrap;
-            justify-content: space-between;
             column-gap: 75px;
             row-gap: 22px;
+            justify-content: space-between;
+
+            @media screen and (min-width: $mobileS) {
+                column-gap: 20px;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                column-gap: 40px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                column-gap: 75px;
+            }
             .container-checkbox {
                 @include df-row;
                 gap: 8px;
                 align-items: center;
+
+                @media screen and (min-width: $mobileS) {
+                }
+
+                @media screen and (min-width: $tablet) {
+                }
 
                 .container-checkbox__input {
                     width: 14px;
@@ -63,7 +112,14 @@
                 }
                 .container-checkbox__label {
                     color: $color-form;
-                    @include font(300, 22px, normal);
+
+                    @media screen and (min-width: $mobileS) {
+                        @include font(300, 14px, normal);
+                    }
+
+                    @media screen and (min-width: $tablet) {
+                        @include font(300, 22px, normal);
+                    }
                 }
             }
         }
@@ -71,19 +127,38 @@
 
     .form__send {
         color: $color-white;
-        font-size: 36px;
-        font-weight: 900;
         border-bottom: 4px solid $color-white;
+
+        @media screen and (min-width: $mobileS) {
+            @include font(900, 20px, normal);
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include font(900, 36px, normal);
+        }
     }
 
     .container-caption {
-        margin-top: 100px;
         @include df-column;
         gap: 20px;
 
+        @media screen and (min-width: $mobileS) {
+            margin-top: 45px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            margin-top: 100px;
+        }
+
         .container-caption__title {
             color: $color-form;
-            @include font(900, 36px, normal);
+            @media screen and (min-width: $mobileS) {
+                @include font(900, 25px, normal);
+            }
+
+            @media screen and (min-width: $tablet) {
+                @include font(900, 36px, normal);
+            }
         }
 
         .container-caption__text {
@@ -91,6 +166,14 @@
             display: block;
             color: $color-white;
             @include font(500, 24px, 132.66%);
+
+            @media screen and (min-width: $mobileS) {
+                @include font(500, 20px, 132.66%);
+            }
+
+            @media screen and (min-width: $tablet) {
+                @include font(500, 24px, 132.66%);
+            }
             border-bottom: 2px solid $color-white;
         }
     }

@@ -1,46 +1,130 @@
 .colors {
-    padding-top: 100px;
-    width: $width-main;
-    margin: 0 auto;
-    @include df-row;
-    justify-content: space-between;
+    @include adaptive-main-container;
 
-    .container-info {
+    @media screen and (min-width: $mobileS) {
+        margin-top: 50px;
         @include df-column;
-        gap: 40px;
-        .colors__title {
-            @include title-article;
-        }
-        .list-colors {
-            max-width: 490px;
-            width: 100%;
-            @include df-row;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
+        gap: 15px;
+    }
 
-            .list-colors__item {
+    @media screen and (min-width: $tablet) {
+        margin-top: 100px;
+        gap: 40px;
+    }
+
+    @media screen and (min-width: $laptop) {
+        gap: 40px;
+        display: grid;
+        grid-template-columns: 310px 1fr;
+        grid-template-rows: 115px 340px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        row-gap: 40px;
+        column-gap: 80px;
+        display: grid;
+        grid-template-columns: 490px 1fr;
+        grid-template-rows: 115px 300px;
+    }
+
+    .colors__title {
+        @include title-article;
+    }
+    .list-colors {
+        width: 100%;
+        @include df-row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: $mobileS) {
+            gap: 20px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            gap: 30px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            gap: 50px;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            gap: 35px;
+            margin: 0;
+            max-width: 470px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            height: 195px;
+            margin: 0;
+        }
+
+        .list-colors__item {
+            position: relative;
+
+            @media screen and (min-width: $mobileS) {
+                width: 80px;
+                height: 50px;
+            }
+
+            @media screen and (min-width: $tablet) {
                 width: 130px;
                 height: 80px;
-                position: relative;
-                span {
-                    position: absolute;
-                    top: 30px;
-                    left: 20px;
+            }
 
-                    @include font(400, 18px, 140%);
-                    letter-spacing: 0.15px;
+            svg {
+                @media screen and (min-width: $mobileS) {
+                    width: 80px;
+                    height: 50px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    width: 130px;
+                    height: 80px;
                 }
             }
 
-            .list-colors__item__black {
-                color: $color-white;
+            span {
+                position: absolute;
+
+                letter-spacing: 0.15px;
+
+                @media screen and (min-width: $mobileS) {
+                    @include font(400, 12px, 140%);
+                    top: 17px;
+                    left: 10px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    @include font(400, 18px, 140%);
+                    top: 30px;
+                    left: 20px;
+                }
             }
         }
+
+        .list-colors__item__black {
+            color: $color-white;
+        }
     }
+
     .colors-image {
-        width: 598.772px;
-        height: 433.05px;
         transform: rotate(-1.582deg);
+        @media screen and (min-width: $tablet) {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: $laptop) {
+            margin-top: 90px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            width: 600px;
+            height: 434px;
+            margin: 0;
+        }
     }
 }

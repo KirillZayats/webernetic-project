@@ -21,6 +21,10 @@ html {
     background: $color-background;
   }
 
+  main {
+    overflow: hidden;
+  }
+
   button,
   input,
   h1,

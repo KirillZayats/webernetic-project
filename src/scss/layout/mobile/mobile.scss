@@ -3,24 +3,49 @@
     width: 100%;
     position: relative;
 
+    @media screen and (min-width: $mobileS) {
+        margin-top: 80px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        margin-top: 130px;
+    }
+
     .container {
-        @include df-row;
-        justify-content: space-between;
-        align-items: center;
-        width: $width-main;
-        margin: 0 auto;
+        @include adaptive-main-container;
+
+        @media screen and (min-width: $mobileS) {
+            @include df-column;
+            gap: 20px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            align-items: center;
+
+            @include df-row;
+            justify-content: space-between;
+            gap: 0;
+        }
 
         .container__title {
             @include title-article;
         }
 
         .container__description {
-            max-width: 350px;
             width: 100%;
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 130%;
-            @include font(400, 24px, 130%);
+
+            @media screen and (min-width: $mobileS) {
+                @include font(400, 18px, 130%);
+            }
+
+            @media screen and (min-width: $tablet) {
+                max-width: max-content;
+                @include font(400, 24px, 130%);
+            }
+
+            @media screen and (min-width: $desktop) {
+                max-width: 350px;
+            }
         }
     }
     .container__images {
@@ -29,12 +54,33 @@
         justify-content: space-between;
 
         .container__images__left {
-            width: 235px;
-            height: 2000px;
             background-image: url("../images/mobile-version/left.png");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
+
+            @media screen and (min-width: $mobileS) {
+                width: 50px;
+                height: 415px;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                width: 60px;
+                height: 500px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                width: 100px;
+                height: 770px;
+            }
+
+            @media screen and (min-width: $laptop) {
+            }
+
+            @media screen and (min-width: $desktop) {
+                width: 235px;
+                height: 2000px;
+            }
 
             &::before {
                 @include down-opacity(0%, 25%);
@@ -42,12 +88,40 @@
         }
 
         .container__images__left-main {
-            width: 380px;
-            height: 2200px;
             background-image: url("../images/mobile-version/main-left.png");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
+
+            @media screen and (min-width: $mobileS) {
+                width: 90px;
+                height: 520px;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                width: 100px;
+                height: 580px;
+            }
+
+            @media screen and (min-width: $mobileL) {
+                width: 130px;
+                height: 700px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                width: 200px;
+                height: 1160px;
+            }
+
+            @media screen and (min-width: $laptop) {
+                width: 300px;
+                height: 1735px;
+            }
+
+            @media screen and (min-width: $desktop) {
+                width: 380px;
+                height: 2200px;
+            }
 
             &::before {
                 @include down-opacity(0%, 20%);
@@ -55,12 +129,40 @@
         }
 
         .container__images__right-main {
-            width: 380px;
-            height: 2080px;
             background-image: url("../images/mobile-version/main-right.png");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
+
+            @media screen and (min-width: $mobileS) {
+                width: 90px;
+                height: 485px;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                width: 100px;
+                height: 540px;
+            }
+
+            @media screen and (min-width: $mobileL) {
+                width: 130px;
+                height: 680px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                width: 200px;
+                height: 1050px;
+            }
+
+            @media screen and (min-width: $laptop) {
+                width: 300px;
+                height: 1640px;
+            }
+
+            @media screen and (min-width: $desktop) {
+                width: 380px;
+                height: 2080px;
+            }
 
             &::before {
                 @include down-opacity(0%, 20%);
@@ -69,48 +171,143 @@
 
         .container__images__right {
             @include df-column;
-            gap: 60px;
+            @media screen and (min-width: $mobileS) {
+                gap: 10px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                gap: 60px;
+            }
 
             .container__images__right-up {
-                width: 235px;
-                height: 1154.661px;
-
                 background-image: url("../images/mobile-version/right-up.png");
                 background-size: cover;
                 background-repeat: no-repeat;
                 position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    width: 55px;
+                    height: 280px;
+                }
+
+                @media screen and (min-width: $mobileM) {
+                    width: 65px;
+                    height: 330px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    width: 100px;
+                    height: 505px;
+                }
+
+                @media screen and (min-width: $desktop) {
+                    width: 235px;
+                    height: 1195px;
+                }
             }
 
             .container__images__right-down {
-                width: 235px;
-                height: 689.769px;
-                border-radius: 15px 0 0 15px;
-                border-top: 3px solid #c6c6c7;
-                border-left: 3px solid #c6c6c7;
-                border-bottom: 3px solid #c6c6c7;
-
                 background-image: url("../images/mobile-version/right-down-scroll-1.png");
                 background-size: cover;
                 background-repeat: no-repeat;
                 position: relative;
 
+                @media screen and (min-width: $mobileS) {
+                    border-top: 1px solid #c6c6c7;
+                    border-left: 1px solid #c6c6c7;
+                    border-bottom: 1px solid #c6c6c7;
+                    border-radius: 5px 0 0 5px;
+
+                    width: 55px;
+                    height: 143px;
+                }
+
+                @media screen and (min-width: $mobileM) {
+                    width: 65px;
+                    height: 178px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    border-top: 2px solid #c6c6c7;
+                    border-left: 2px solid #c6c6c7;
+                    border-bottom: 2px solid #c6c6c7;
+
+                    border-radius: 10px 0 0 10px;
+
+                    width: 100px;
+                    height: 345px;
+                }
+
+                @media screen and (min-width: $laptop) {
+                }
+
+                @media screen and (min-width: $desktop) {
+                    width: 235px;
+                    height: 689.769px;
+
+                    border-top: 3px solid #c6c6c7;
+                    border-left: 3px solid #c6c6c7;
+                    border-bottom: 3px solid #c6c6c7;
+
+                    border-radius: 15px 0 0 15px;
+                }
+
                 .container__images__right-down-in {
-                    width: 234px;
-                    height: 537px;
-                    margin: 70px 0 5px 1px;
                     margin-left: 1px;
 
                     background-image: url("../images/mobile-version/right-down-scroll-2.png");
                     background-size: cover;
                     background-repeat: no-repeat;
                     position: relative;
+
+                    @media screen and (min-width: $mobileS) {
+                        width: 55px;
+                        height: 120px;
+                        margin: 15px 0 2px 1px;
+                    }
+
+                    @media screen and (min-width: $mobileM) {
+                        width: 65px;
+                        height: 152px;
+                        margin: 17px 0 2px 1px;
+                    }
+
+                    @media screen and (min-width: $tablet) {
+                        width: 100px;
+                        height: 300px;
+                        margin: 30px 0 1px 1px;
+                    }
+
+                    @media screen and (min-width: $desktop) {
+                        width: 234px;
+                        height: 537px;
+                        margin: 70px 0 5px 1px;
+                    }
                 }
 
                 .container__images__right-down-bottom {
                     background: $fill-color-2;
                     margin-left: 1px;
-                    width: 234px;
-                    height: 60px;
+
+                    @media screen and (min-width: $mobileS) {
+                        width: 54px;
+                        height: 5px;
+                    }
+
+                    @media screen and (min-width: $mobileM) {
+                        width: 64px;
+                        height: 5px;
+                    }
+
+                    @media screen and (min-width: $tablet) {
+                        width: 109px;
+                        height: 10px;
+                    }
+
+                    @media screen and (min-width: $desktop) {
+                        width: 234px;
+                        height: 60px;
+                    }
                 }
             }
         }
@@ -121,38 +318,246 @@
     }
 
     .main__ellipse-1 {
-        @include set-ellipse(283px, 283px);
-        right: 0px;
-        top: 400px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(90px, 90px);
+            right: 0px;
+            top: 200px;
+        }
 
+        @media screen and (min-width: $mobileM) {
+            top: 180px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            @include set-ellipse(110px, 110px);
+            top: 200px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(150px, 150px);
+            right: 0px;
+            top: 300px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            @include set-ellipse(203px, 203px);
+            right: -30px;
+            top: 300px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(283px, 283px);
+            right: 0px;
+            top: 400px;
+        }
     }
 
     .main__ellipse-2 {
-        @include set-ellipse(436px, 436px);
-        left: 200px;
-        top: 500px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(110px, 110px);
+
+            left: 30px;
+            top: 300px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            left: 30px;
+            top: 350px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            @include set-ellipse(150px, 150px);
+
+            left: 30px;
+            top: 400px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(210px, 210px);
+
+            left: 80px;
+            top: 600px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            @include set-ellipse(300px, 300px);
+
+            left: 80px;
+            top: 700px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(436px, 436px);
+
+            left: 200px;
+            top: 500px;
+        }
     }
 
     .main__ellipse-3 {
-        @include set-ellipse(568px, 568px);
-        right: 200px;
-        top: 900px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(90px, 90px);
+
+            right: 100px;
+            top: 350px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            right: 50px;
+            top: 400px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            @include set-ellipse(110px, 110px);
+
+            right: 60px;
+            top: 400px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(150px, 150px);
+
+            right: 100px;
+            top: 650px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            @include set-ellipse(403px, 403px);
+
+            right: 100px;
+            top: 750px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(568px, 568px);
+
+            right: 200px;
+            top: 900px;
+        }
     }
     .main__ellipse-4 {
-        @include set-ellipse(456px, 456px);
-        left: 105px;
-        top: 1300px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(90px, 90px);
+
+            left: 35px;
+            top: 430px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            top: 530px;
+
+            left: 165px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            @include set-ellipse(110px, 110px);
+
+            left: 135px;
+            top: 530px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(150px, 150px);
+            left: 250px;
+            top: 890px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            @include set-ellipse(300px, 300px);
+
+            left: 105px;
+            top: 1300px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(456px, 456px);
+
+            left: 105px;
+            top: 1300px;
+        }
     }
 
     .main__ellipse-5 {
-        @include set-ellipse(436px, 436px);
-        left: 350px;
-        top: 1750px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(110px, 110px);
+
+            left: 60px;
+            top: 150px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            left: 60px;
+            top: 150px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            @include set-ellipse(150px, 150px);
+
+            left: 60px;
+            top: 650px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(200px, 200px);
+
+            left: 80px;
+            top: 980px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            @include set-ellipse(350px, 350px);
+
+            left: 350px;
+            top: 1450px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(436px, 436px);
+
+            left: 350px;
+            top: 1750px;
+        }
     }
 
     .main__ellipse-6 {
-        @include set-ellipse(283px, 283px);
-        right: 30px;
-        top: 1850px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(90px, 90px);
+
+            right: 30px;
+            top: 450px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            right: 0px;
+            top: 550px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            @include set-ellipse(110px, 110px);
+
+            right: 30px;
+            top: 650px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(150px, 150px);
+
+            right: 30px;
+            top: 950px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            @include set-ellipse(200px, 200px);
+
+            right: 150px;
+            top: 1450px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(283px, 283px);
+
+            right: 30px;
+            top: 1850px;
+        }
     }
 }

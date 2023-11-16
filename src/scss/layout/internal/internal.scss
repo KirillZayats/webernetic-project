@@ -1,26 +1,49 @@
 .internal {
-    padding-top: 100px;
     width: 100%;
     @include df-column;
-    gap: 40px;
     position: relative;
 
-    .container-text {
-        width: $width-main;
-        margin: 0 auto;
+    @media screen and (min-width: $mobileS) {
+        margin-top: 50px;
+        gap: 30px;
+    }
 
-        @include df-row;
-        justify-content: space-between;
-        align-items: center;
+    @media screen and (min-width: $tablet) {
+        margin-top: 100px;
+        gap: 40px;
+    }
+
+    .container-text {
+        @include adaptive-main-container;
+        width: 100%;
+
+        @media screen and (min-width: $mobileS) {
+            @include df-column;
+            gap: 20px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include df-row;
+            align-items: center;
+            justify-content: space-between;
+        }
 
         .container-text__title {
             @include title-article;
         }
 
         .container-text__description {
-            @include font(400, 24px, 130%);
-            max-width: 350px;
             width: 100%;
+            @media screen and (min-width: $mobileS) {
+                @include font(400, 18px, 140%);
+            }
+
+            @media screen and (min-width: $tablet) {
+                @include font(400, 24px, 130%);
+            }
+            @media screen and (min-width: $desktop) {
+                max-width: 350px;
+            }
         }
     }
 
@@ -29,17 +52,48 @@
         justify-content: space-between;
         .container__images__left {
             @include df-column;
-            gap: 60px;
+
+            @media screen and (min-width: $mobileS) {
+                gap: 30px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                gap: 60px;
+            }
+
             .container__images__left-up {
                 border-bottom-right-radius: 15px;
                 border-bottom: 3px solid #c6c6c7;
 
-                width: 400px;
-                height: 727.344px;
                 background-image: url("../images/internal-pages/left-up.png");
                 background-size: cover;
                 background-repeat: no-repeat;
                 position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    width: 90px;
+                    height: 168px;
+                }
+
+                @media screen and (min-width: $mobileL) {
+                    width: 120px;
+                    height: 222px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    width: 220px;
+                    height: 410px;
+                }
+
+                @media screen and (min-width: $laptop) {
+                    width: 280px;
+                    height: 520px;
+                }
+
+                @media screen and (min-width: $desktop) {
+                    width: 400px;
+                    height: 727.344px;
+                }
             }
             .container__images__left-down {
                 width: 400px;
@@ -48,6 +102,31 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    width: 90px;
+                    height: 175px;
+                }
+
+                @media screen and (min-width: $mobileL) {
+                    width: 120px;
+                    height: 230px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    width: 220px;
+                    height: 425px;
+                }
+
+                @media screen and (min-width: $laptop) {
+                    width: 280px;
+                    height: 540px;
+                }
+
+                @media screen and (min-width: $desktop) {
+                    width: 400px;
+                    height: 780px;
+                }
                 &::before {
                     @include down-opacity(0%, 25%);
                 }
@@ -57,26 +136,78 @@
         }
 
         .container__images__main {
-            width: 500px;
-            height: 1760px;
             background-image: url("../images/internal-pages/main.png");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
             z-index: 3;
+
+            @media screen and (min-width: $mobileS) {
+                width: 125px;
+                height: 440px;
+            }
+
+            @media screen and (min-width: $mobileM) {
+                width: 140px;
+                height: 492px;
+            }
+
+            @media screen and (min-width: $mobileL) {
+                width: 170px;
+                height: 600px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                width: 280px;
+                height: 985px;
+            }
+
+            @media screen and (min-width: $laptop) {
+                width: 400px;
+                height: 1410px;
+            }
+
+            @media screen and (min-width: $desktop) {
+                width: 500px;
+                height: 1760px;
+            }
+
             &::before {
                 @include down-opacity(0%, 15%);
             }
         }
 
         .container__images__right {
-            width: 400px;
-            height: 1425px;
-
             background-image: url("../images/internal-pages/right.png");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
+
+            @media screen and (min-width: $mobileS) {
+                width: 90px;
+                height: 390px;
+            }
+
+            @media screen and (min-width: $mobileL) {
+                width: 120px;
+                height: 520px;
+            }
+
+            @media screen and (min-width: $tablet) {
+                width: 220px;
+                height: 905px;
+            }
+
+            @media screen and (min-width: $laptop) {
+                width: 280px;
+                height: 1205px;
+            }
+
+            @media screen and (min-width: $desktop) {
+                width: 400px;
+                height: 1425px;
+            }
+
             &::before {
                 @include down-opacity(0%, 20%);
             }
@@ -88,23 +219,144 @@
     }
 
     .main__ellipse-1 {
-        @include set-ellipse(436px, 436px);
-        top: 700px;
-        left: 100px;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(78px, 78px);
+            top: 160px;
+            left: 210px;
+        }
 
+        @media screen and (min-width: $mobileM) {
+            left: 265px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            left: 285px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(100px, 100px);
+            top: 300px;
+            left: 515px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            top: 400px;
+            left: 715px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(283px, 283px);
+            top: 200px;
+            left: 900px;
+        }
     }
 
     .main__ellipse-2 {
-        @include set-ellipse(456px, 456px);
-        left: 600px;
-        top: 950px;
-        z-index: 1;
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(128px, 128px);
+            top: 200px;
+            left: 40px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            top: 220px;
+            left: -10px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            top: 270px;
+            left: 40px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(250px, 250px);
+            top: 480px;
+            left: 40px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            top: 650px;
+            left: 90px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(436px, 436px);
+            top: 600px;
+            left: 100px;
+        }
     }
 
     .main__ellipse-3 {
-        @include set-ellipse(456px, 456px);
-        left: 350px;
-        top: 1500px;
-        z-index: 2;
+        z-index: 1;
+
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(113px, 113px);
+            left: 140px;
+            top: 350px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            left: 180px;
+            top: 360px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            left: 220px;
+            top: 400px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(250px, 250px);
+            left: 350px;
+            top: 700px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            left: 540px;
+            top: 900px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include set-ellipse(456px, 456px);
+            left: 600px;
+            top: 850px;
+        }
+    }
+
+    .main__ellipse-4 {
+        @media screen and (min-width: $mobileS) {
+            @include set-ellipse(94px, 94px);
+            left: 70px;
+            top: 410px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            left: 100px;
+            top: 450px;
+        }
+
+        @media screen and (min-width: $mobileL) {
+            left: 100px;
+            top: 500px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            @include set-ellipse(250px, 250px);
+            left: 150px;
+            top: 900px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            left: 220px;
+            top: 1100px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            z-index: 2;
+
+            @include set-ellipse(456px, 456px);
+            left: 350px;
+            top: 1400px;
+        }
     }
 }

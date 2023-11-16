@@ -1,12 +1,22 @@
 .creation {
-    width: $width-main;
-    margin: 0 auto;
     @include df-column;
-    gap: 60px;
+    @include adaptive-main-container;
+
+    @media screen and (min-width: $mobileS) {
+        gap: 25px;
+    }
+    @media screen and (min-width: $tablet) {
+        gap: 60px;
+    }
 
     .creation__title {
         color: $color-title-section;
-        @include font(400, 18px, 115.02%);
+        @media screen and (min-width: $mobileS) {
+            @include font(400, 14px, 115.02%);
+        }
+        @media screen and (min-width: $tablet) {
+            @include font(400, 18px, 115.02%);
+        }
         text-transform: uppercase;
     }
 
@@ -15,8 +25,14 @@
         width: 100%;
         @include df-column;
         gap: 12px;
+
         .container-text__item {
-            @include font(400, 24px, 130%);
+            @media screen and (min-width: $mobileS) {
+                @include font(400, 18px, 140%);
+            }
+            @media screen and (min-width: $tablet) {
+                @include font(400, 24px, 130%);
+            }
         }
     }
 }

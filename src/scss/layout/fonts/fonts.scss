@@ -1,72 +1,206 @@
 .fonts {
-    padding-top: 40px;
-    width: $width-main;
-    margin: 0 auto;
-    @include df-row;
-    justify-content: space-between;
+    @include adaptive-main-container;
 
-    .fonts-image {
-        width: 622.109px;
-        height: 405.789px;
+    @media screen and (min-width: $mobileS) {
+        @include df-column;
+        gap: 20px;
+        padding-top: 50px;
     }
 
-    .container-info {
-        @include df-column;
-        gap: 40px;
+    @media screen and (min-width: $laptop) {
+        padding-top: 80px;
 
-        .fonts__title {
-            @include title-article;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+        padding-top: 40px;
+        column-gap: 110px;
+        row-gap: 40px;
+    }
+
+    .fonts-image {
+        @media screen and (min-width: $mobileS) {
+            width: 300px;
         }
 
-        .list-fonts {
-            max-width: 460px;
-            width: 100%;
-            @include df-row;
-            column-gap: 38px;
-            row-gap: 25px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
+        @media screen and (min-width: $mobileM) {
+            margin: 0 auto;
+        }
 
-            .list-fonts__item-letter {
-                display: flex;
-                position: relative;
-                .list-fonts__item-letter__very-big {
+        @media screen and (min-width: $mobileM) {
+            width: 100%;
+        }
+
+        @media screen and (min-width: $tablet) {
+            width: 622.109px;
+            height: 405.789px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
+
+            width: 450px;
+            height: auto;
+            margin-top: 30px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            width: 622.109px;
+            height: 405.789px;
+            margin-top: 0;
+        }
+    }
+
+    .fonts__title {
+        @include title-article;
+
+        @media screen and (min-width: $laptop) {
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+    }
+
+    .list-fonts {
+        width: 100%;
+        @include df-row;
+        column-gap: 38px;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: $mobileS) {
+            max-width: 300px;
+            justify-content: flex-start;
+            row-gap: 25px;
+        }
+
+        @media screen and (min-width: $mobileM) {
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        @media screen and (min-width: $tablet) {
+            justify-content: flex-start;
+            max-width: 460px;
+        }
+
+        @media screen and (min-width: $laptop) {
+            grid-column-start: 2;
+            grid-row-start: 2;
+            max-width: 460px;
+            margin: 0 0;
+            row-gap: 0px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            justify-content: flex-start;
+            max-width: 460px;
+            row-gap: 25px;
+        }
+
+        .list-fonts__item-letter {
+            display: flex;
+            position: relative;
+            .list-fonts__item-letter__very-big {
+                @media screen and (min-width: $mobileS) {
+                    font-size: 45px;
+                    font-weight: 700;
+                }
+
+                @media screen and (min-width: $tablet) {
                     font-size: 105px;
                     font-weight: 700;
                 }
-                .list-fonts__item-letter__big {
+            }
+            .list-fonts__item-letter__big {
+                position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    font-size: 40px;
+                    font-weight: 600;
+                    top: 6px;
+                }
+
+                @media screen and (min-width: $tablet) {
                     font-size: 90px;
                     font-weight: 600;
-                    position: relative;
                     top: 14px;
                 }
-                .list-fonts__item-letter__higher-middle {
-                    font-size: 70px;
-                    font-weight: 600;
-                    position: relative;
-                    top: 31px;
-                }
-                .list-fonts__item-letter__middle {
-                    font-size: 45px;
-                    font-weight: 700;
-                    position: relative;
-                    top: -10px;
-                }
-                .list-fonts__item-letter__lower-middle {
+            }
+            .list-fonts__item-letter__higher-middle {
+                position: relative;
+
+                @media screen and (min-width: $mobileS) {
                     font-size: 35px;
                     font-weight: 600;
-                    position: relative;
+                    top: 12px;
                 }
-                .list-fonts__item-letter__small {
+
+                @media screen and (min-width: $tablet) {
+                    font-size: 70px;
+                    font-weight: 600;
+                    top: 31px;
+                }
+            }
+            .list-fonts__item-letter__middle {
+                position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    font-size: 30px;
+                    font-weight: 700;
+                    top: -4px;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    font-size: 45px;
+                    font-weight: 700;
+                    top: -10px;
+                }
+            }
+            .list-fonts__item-letter__lower-middle {
+                position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    font-size: 25px;
+                    font-weight: 600;
+                }
+
+                @media screen and (min-width: $tablet) {
+                    font-size: 35px;
+                    font-weight: 600;
+                }
+            }
+            .list-fonts__item-letter__small {
+                position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    font-size: 20px;
+                    font-weight: 600;
+                    top: 6px;
+                }
+
+                @media screen and (min-width: $tablet) {
                     font-size: 26px;
                     font-weight: 600;
-                    position: relative;
                     top: 7px;
                 }
-                .list-fonts__item-letter__very-small {
+            }
+            .list-fonts__item-letter__very-small {
+                position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    font-size: 15px;
+                    font-weight: 400;
+                    top: 10px;
+                }
+
+                @media screen and (min-width: $tablet) {
                     font-size: 20px;
                     font-weight: 400;
-                    position: relative;
                     top: 14px;
                 }
             }

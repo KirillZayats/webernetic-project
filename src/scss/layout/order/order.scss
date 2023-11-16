@@ -3,13 +3,30 @@
 
 .order {
     background: linear-gradient(-10deg, #cc4a3d 10%, rgba(204, 74, 61, 0) 80%);
-    padding-bottom: 97px;
-    .container-order {
-        width: $width-main;
-        margin: 0px auto;
 
+    @media screen and (min-width: $mobileS) {
+        padding-bottom: 50px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        padding-bottom: 97px;
+    }
+
+    .container-order {
+        @include adaptive-main-container;
         @include df-column;
-        gap: 150px;
+
+        @media screen and (min-width: $mobileS) {
+            gap: 40px;
+        }
+
+        @media screen and (min-width: $tablet) {
+            gap: 80px;
+        }
+
+        @media screen and (min-width: $desktop) {
+            gap: 150px;
+        }
 
         .consultation {
             @include df-row;
@@ -20,6 +37,14 @@
                 height: 539px;
 
                 position: relative;
+
+                @media screen and (min-width: $mobileS) {
+                    display: none;
+                }
+
+                @media screen and (min-width: $desktop) {
+                    display: block;
+                }
 
                 .container__label {
                     position: absolute;
