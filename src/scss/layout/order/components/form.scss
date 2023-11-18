@@ -162,17 +162,19 @@
         }
 
         .container-caption__text {
-            width: 220px;
             display: block;
             color: $color-white;
             @include font(500, 24px, 132.66%);
 
             @media screen and (min-width: $mobileS) {
                 @include font(500, 20px, 132.66%);
+                width: 185px;
+
             }
 
             @media screen and (min-width: $tablet) {
                 @include font(500, 24px, 132.66%);
+                width: 220px;
             }
             border-bottom: 2px solid $color-white;
         }
