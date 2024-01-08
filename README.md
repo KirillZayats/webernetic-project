@@ -1,5 +1,5 @@
-# webernetic-test-task
-Тестовое задание от Webernetic Family
+# webernetic-project
+Небольшой проект от Webernetic Family
 
 ### Задача
 Нужно сверстать страничку согласно макету Figma
